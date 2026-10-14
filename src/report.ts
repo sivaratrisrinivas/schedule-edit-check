@@ -12,6 +12,7 @@ table{border-collapse:collapse;width:100%;margin:10px 0 22px;background:#151b22;
 th{background:#1d252e;font-weight:600}.p{color:#5fd38d;font-weight:700}.f{color:#ff7a7a;font-weight:700}.tag{display:inline-block;background:#2a3440;border-radius:4px;padding:0 6px;margin:1px;font-size:12px}
 details{color:#b9c2ca;font-size:13px}.note{color:#e9c46a;font-size:13px}</style></head><body><main>
 <h1>schedule-edit-check</h1><p class="sub">Checks that an agent's schedule edit touched only what the planner asked for, before the diff preview. Synthetic 50-activity schedule, 20 hand-written agent outputs, no live LLM. <a href="https://github.com/sivaratrisrinivas/schedule-edit-check">Source</a></p>
+<video src="demo.mp4" controls width="100%" style="border-radius:10px;max-width:880px"></video>
 <div class="cards"><div class="card"><b>${pass}/${rows.length}</b>verdicts match planted bugs</div><div class="card"><b>${rows.filter((r: any) => r.planted.length).length}</b>cases with planted bugs</div><div class="card"><b>1</b>documented miss (case 18)</div></div>
 <h2 id="metrics">Per bug type</h2><table><tr><th>Bug type</th><th>Planted</th><th>TP</th><th>FP</th><th>FN</th><th>Precision</th><th>Recall</th></tr>
 ${metrics.map((m: any) => `<tr><td>${m.type}</td><td>${m.planted}</td><td>${m.tp}</td><td>${m.fp}</td><td>${m.fn}</td><td>${pct(m.precision)}</td><td>${pct(m.recall)}</td></tr>`).join("")}</table>
