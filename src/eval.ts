@@ -6,15 +6,16 @@ import { check, type FindingType } from "./check.ts";
 import { clone, generateSchedule } from "./schedule.ts";
 
 const TYPES: FindingType[] = ["over_match", "wrong_link_type", "constraint_touched", "cp_shift", "conflict_overwrite", "wrong_value", "under_match", "field_not_allowed", "cycle"];
+let totalMs = 0;
 const rows = cases.map((c) => {
   const before = generateSchedule(); const after = clone(before);
   const t0 = performance.now();
   const out = c.agent(makeApi(after)) ?? {};
   const findings = check(before, after, c.intent(before), out);
-  const ms = performance.now() - t0;
+  totalMs += performance.now() - t0;
   const found = [...new Set(findings.map((f) => f.type))].sort();
   const planted = [...c.planted].sort();
-  return { id: c.id, title: c.title, planted, found, pass: JSON.stringify(found) === JSON.stringify(planted), findings, ms: +ms.toFixed(2), note: c.note };
+  return { id: c.id, title: c.title, planted, found, pass: JSON.stringify(found) === JSON.stringify(planted), findings, note: c.note };
 });
 const metrics = TYPES.map((t) => {
   const tp = rows.filter((r) => r.planted.includes(t) && r.found.includes(t)).length;
@@ -25,6 +26,7 @@ const metrics = TYPES.map((t) => {
 const pct = (x: number | null) => (x === null ? "n/a" : `${Math.round(x * 100)}%`);
 console.log("case  result  planted -> found");
 for (const r of rows) console.log(`${r.id}    ${r.pass ? "PASS" : "FAIL"}    ${r.planted.join(",") || "clean"} -> ${r.found.join(",") || "clean"}   ${r.title}`);
+console.log(`\nchecker time for all 20 cases: ${totalMs.toFixed(1)} ms (not saved, varies by machine)`);
 console.log(`\n${rows.filter((r) => r.pass).length}/${rows.length} cases where the checker's verdict matches the planted bugs\n`);
 console.log("bug type             planted  TP  FP  FN  precision  recall");
 for (const m of metrics) console.log(`${m.type.padEnd(20)} ${String(m.planted).padStart(7)} ${String(m.tp).padStart(3)} ${String(m.fp).padStart(3)} ${String(m.fn).padStart(3)}  ${pct(m.precision).padStart(9)}  ${pct(m.recall).padStart(6)}`);

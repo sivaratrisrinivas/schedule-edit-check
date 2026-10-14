@@ -6,8 +6,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 5.6
+   "findings": []
   },
   {
    "id": "02",
@@ -24,8 +23,7 @@
      "type": "over_match",
      "detail": "10 activities outside the request changed: A1400, A1410, A1420, A1430, A1440, A1450, A1460, A1470, A1480, A1490"
     }
-   ],
-   "ms": 0.97
+   ]
   },
   {
    "id": "03",
@@ -46,8 +44,7 @@
      "type": "wrong_value",
      "detail": "A1260 duration 10 -> 12.1, expected 11"
     }
-   ],
-   "ms": 0.96
+   ]
   },
   {
    "id": "04",
@@ -55,8 +52,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 1.09
+   "findings": []
   },
   {
    "id": "05",
@@ -79,8 +75,7 @@
      "type": "cp_shift",
      "detail": "finish day 119 -> 129; now critical: none; no longer critical: none"
     }
-   ],
-   "ms": 0.81
+   ]
   },
   {
    "id": "06",
@@ -88,8 +83,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 1.69
+   "findings": []
   },
   {
    "id": "07",
@@ -166,8 +160,7 @@
      "type": "wrong_link_type",
      "detail": "A1070>A1170 is SS, planner asked for FS"
     }
-   ],
-   "ms": 2.13
+   ]
   },
   {
    "id": "08",
@@ -184,8 +177,7 @@
      "type": "wrong_link_type",
      "detail": "A1040>A1050 changed type SS/FF -> FS"
     }
-   ],
-   "ms": 0.87
+   ]
   },
   {
    "id": "09",
@@ -193,8 +185,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 0.78
+   "findings": []
   },
   {
    "id": "10",
@@ -211,8 +202,7 @@
      "type": "over_match",
      "detail": "5 activities outside the request changed: A1080, A1180, A1280, A1380, A1480"
     }
-   ],
-   "ms": 0.72
+   ]
   },
   {
    "id": "11",
@@ -229,8 +219,7 @@
      "type": "constraint_touched",
      "detail": "A1320 constraint {\"type\":\"START_AFTER\",\"day\":28} -> null"
     }
-   ],
-   "ms": 0.92
+   ]
   },
   {
    "id": "12",
@@ -253,8 +242,7 @@
      "type": "cp_shift",
      "detail": "finish day 119 -> 112; now critical: A1010,A1030,A1040,A1050; no longer critical: A1020"
     }
-   ],
-   "ms": 0.84
+   ]
   },
   {
    "id": "13",
@@ -262,8 +250,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 1.07
+   "findings": []
   },
   {
    "id": "14",
@@ -271,8 +258,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 1.6
+   "findings": []
   },
   {
    "id": "15",
@@ -297,8 +283,7 @@
      "type": "conflict_overwrite",
      "detail": "row A1000 conflicts with planner-entered actuals and was not refused"
     }
-   ],
-   "ms": 0.87
+   ]
   },
   {
    "id": "16",
@@ -319,8 +304,7 @@
      "type": "conflict_overwrite",
      "detail": "row A1000 conflicts with planner-entered actuals and was not refused"
     }
-   ],
-   "ms": 0.7
+   ]
   },
   {
    "id": "17",
@@ -343,8 +327,7 @@
      "type": "cp_shift",
      "detail": "finish day 119 -> 122; now critical: A1010,A1030,A1040,A1050; no longer critical: A1020"
     }
-   ],
-   "ms": 0.6
+   ]
   },
   {
    "id": "18",
@@ -355,7 +338,6 @@
    "found": [],
    "pass": false,
    "findings": [],
-   "ms": 0.73,
    "note": "The checker trusts the intent spec. If the reader step already over-matched, this check cannot see it."
   },
   {
@@ -364,8 +346,7 @@
    "planted": [],
    "found": [],
    "pass": true,
-   "findings": [],
-   "ms": 0.65
+   "findings": []
   },
   {
    "id": "20",
@@ -388,8 +369,7 @@
      "type": "over_match",
      "detail": "link A1270>A1370 FS was not requested"
     }
-   ],
-   "ms": 0.72
+   ]
   }
  ],
  "metrics": [
