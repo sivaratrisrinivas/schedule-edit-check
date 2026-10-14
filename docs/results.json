@@ -1,0 +1,451 @@
+{
+ "rows": [
+  {
+   "id": "01",
+   "title": "Zone 5 +10% (blog example 1), correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 5.6
+  },
+  {
+   "id": "02",
+   "title": "Zone 5 +10%, WBS matched by prefix, pulls in Zone 5 Annex",
+   "planted": [
+    "over_match"
+   ],
+   "found": [
+    "over_match"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "over_match",
+     "detail": "10 activities outside the request changed: A1400, A1410, A1420, A1430, A1440, A1450, A1460, A1470, A1480, A1490"
+    }
+   ],
+   "ms": 0.97
+  },
+  {
+   "id": "03",
+   "title": "Zone 5 and Control Systems +10%, no dedupe, shared activities stretched twice",
+   "planted": [
+    "wrong_value"
+   ],
+   "found": [
+    "wrong_value"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "wrong_value",
+     "detail": "A1220 duration 20 -> 24.2, expected 22"
+    },
+    {
+     "type": "wrong_value",
+     "detail": "A1260 duration 10 -> 12.1, expected 11"
+    }
+   ],
+   "ms": 0.96
+  },
+  {
+   "id": "04",
+   "title": "Control Systems delivery +2 weeks (blog example 2), correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 1.09
+  },
+  {
+   "id": "05",
+   "title": "Control Systems delivery +2 weeks, intersection dropped, every delivery stretched",
+   "planted": [
+    "cp_shift",
+    "over_match"
+   ],
+   "found": [
+    "cp_shift",
+    "over_match"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "over_match",
+     "detail": "4 activities outside the request changed: A1020, A1120, A1320, A1420"
+    },
+    {
+     "type": "cp_shift",
+     "detail": "finish day 119 -> 129; now critical: none; no longer critical: none"
+    }
+   ],
+   "ms": 0.81
+  },
+  {
+   "id": "06",
+   "title": "Beneficiation after Primary Crushing (blog example 3), correct FS",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 1.69
+  },
+  {
+   "id": "07",
+   "title": "Beneficiation after Primary Crushing, SS used instead of FS",
+   "planted": [
+    "wrong_link_type"
+   ],
+   "found": [
+    "wrong_link_type"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "wrong_link_type",
+     "detail": "A1060>A1140 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1040>A1140 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1050>A1140 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1070>A1140 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1040>A1150 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1050>A1150 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1060>A1150 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1070>A1150 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1040>A1160 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1050>A1160 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1060>A1160 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1070>A1160 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1040>A1170 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1050>A1170 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1060>A1170 is SS, planner asked for FS"
+    },
+    {
+     "type": "wrong_link_type",
+     "detail": "A1070>A1170 is SS, planner asked for FS"
+    }
+   ],
+   "ms": 2.13
+  },
+  {
+   "id": "08",
+   "title": "Beneficiation after Primary Crushing, also flips an existing PC SS link to FS",
+   "planted": [
+    "wrong_link_type"
+   ],
+   "found": [
+    "wrong_link_type"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "wrong_link_type",
+     "detail": "A1040>A1050 changed type SS/FF -> FS"
+    }
+   ],
+   "ms": 0.87
+  },
+  {
+   "id": "09",
+   "title": "Commissioning not before July 2026 (blog example 4), correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 0.78
+  },
+  {
+   "id": "10",
+   "title": "Commissioning not before July 2026, code prefix also hits pre-commissioning",
+   "planted": [
+    "over_match"
+   ],
+   "found": [
+    "over_match"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "over_match",
+     "detail": "5 activities outside the request changed: A1080, A1180, A1280, A1380, A1480"
+    }
+   ],
+   "ms": 0.72
+  },
+  {
+   "id": "11",
+   "title": "Zone 5 +10%, agent also clears a start constraint 'so it can move'",
+   "planted": [
+    "constraint_touched"
+   ],
+   "found": [
+    "constraint_touched"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "constraint_touched",
+     "detail": "A1320 constraint {\"type\":\"START_AFTER\",\"day\":28} -> null"
+    }
+   ],
+   "ms": 0.92
+  },
+  {
+   "id": "12",
+   "title": "Control Systems delivery +2 weeks, agent pulls Primary Crushing delivery constraint earlier",
+   "planted": [
+    "constraint_touched",
+    "cp_shift"
+   ],
+   "found": [
+    "constraint_touched",
+    "cp_shift"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "constraint_touched",
+     "detail": "A1020 constraint {\"type\":\"START_AFTER\",\"day\":42} -> {\"type\":\"START_AFTER\",\"day\":28}"
+    },
+    {
+     "type": "cp_shift",
+     "detail": "finish day 119 -> 112; now critical: A1010,A1030,A1040,A1050; no longer critical: A1020"
+    }
+   ],
+   "ms": 0.84
+  },
+  {
+   "id": "13",
+   "title": "Status two rows, no conflicts, correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 1.07
+  },
+  {
+   "id": "14",
+   "title": "Status rows with two conflicts, both refused and reported, correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 1.6
+  },
+  {
+   "id": "15",
+   "title": "Status rows P6 style, raw writes overwrite planner-entered actuals",
+   "planted": [
+    "conflict_overwrite"
+   ],
+   "found": [
+    "conflict_overwrite"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "conflict_overwrite",
+     "detail": "A1000.actualFinish was planner-entered (16) and was overwritten"
+    },
+    {
+     "type": "conflict_overwrite",
+     "detail": "row A1010 conflicts with planner-entered actuals and was not refused"
+    },
+    {
+     "type": "conflict_overwrite",
+     "detail": "row A1000 conflicts with planner-entered actuals and was not refused"
+    }
+   ],
+   "ms": 0.87
+  },
+  {
+   "id": "16",
+   "title": "Status rows, conflicting rows silently skipped, not reported",
+   "planted": [
+    "conflict_overwrite"
+   ],
+   "found": [
+    "conflict_overwrite"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "conflict_overwrite",
+     "detail": "row A1010 conflicts with planner-entered actuals and was not refused"
+    },
+    {
+     "type": "conflict_overwrite",
+     "detail": "row A1000 conflicts with planner-entered actuals and was not refused"
+    }
+   ],
+   "ms": 0.7
+  },
+  {
+   "id": "17",
+   "title": "PC design review +2 days, unit slip makes it +2 weeks",
+   "planted": [
+    "cp_shift",
+    "wrong_value"
+   ],
+   "found": [
+    "cp_shift",
+    "wrong_value"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "wrong_value",
+     "detail": "A1010 duration 6 -> 16, expected 8"
+    },
+    {
+     "type": "cp_shift",
+     "detail": "finish day 119 -> 122; now critical: A1010,A1030,A1040,A1050; no longer critical: A1020"
+    }
+   ],
+   "ms": 0.6
+  },
+  {
+   "id": "18",
+   "title": "Known blind spot: the intent itself lists Zone 5 Annex, agent follows it",
+   "planted": [
+    "over_match"
+   ],
+   "found": [],
+   "pass": false,
+   "findings": [],
+   "ms": 0.73,
+   "note": "The checker trusts the intent spec. If the reader step already over-matched, this check cannot see it."
+  },
+  {
+   "id": "19",
+   "title": "Zone 5 Annex civil work +20%, correct",
+   "planted": [],
+   "found": [],
+   "pass": true,
+   "findings": [],
+   "ms": 0.65
+  },
+  {
+   "id": "20",
+   "title": "Zone 5 cabling after CS install, SS used and an extra predecessor added",
+   "planted": [
+    "over_match",
+    "wrong_link_type"
+   ],
+   "found": [
+    "over_match",
+    "wrong_link_type"
+   ],
+   "pass": true,
+   "findings": [
+    {
+     "type": "wrong_link_type",
+     "detail": "A1260>A1370 is SS, planner asked for FS"
+    },
+    {
+     "type": "over_match",
+     "detail": "link A1270>A1370 FS was not requested"
+    }
+   ],
+   "ms": 0.72
+  }
+ ],
+ "metrics": [
+  {
+   "type": "over_match",
+   "planted": 5,
+   "tp": 4,
+   "fp": 0,
+   "fn": 1,
+   "precision": 1,
+   "recall": 0.8
+  },
+  {
+   "type": "wrong_link_type",
+   "planted": 3,
+   "tp": 3,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1,
+   "recall": 1
+  },
+  {
+   "type": "constraint_touched",
+   "planted": 2,
+   "tp": 2,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1,
+   "recall": 1
+  },
+  {
+   "type": "cp_shift",
+   "planted": 3,
+   "tp": 3,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1,
+   "recall": 1
+  },
+  {
+   "type": "conflict_overwrite",
+   "planted": 2,
+   "tp": 2,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1,
+   "recall": 1
+  },
+  {
+   "type": "wrong_value",
+   "planted": 2,
+   "tp": 2,
+   "fp": 0,
+   "fn": 0,
+   "precision": 1,
+   "recall": 1
+  }
+ ]
+}
