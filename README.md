@@ -9,7 +9,7 @@ It builds on two Planlab posts:
 **What it checks** (before vs after, against a planner intent spec of target activities and allowed fields):
 over-matching, wrong link types, touched constraints, critical-path shifts nobody asked for, overwritten or unreported conflicts with planner actuals, plus wrong values, missed targets and logic cycles.
 
-**Results** (20 cases, run in CI on every push; [live report](https://sivaratrisrinivas.github.io/schedule-edit-check/)):
+**Results** (20 cases, run in CI on every push; [live report](https://sivaratrisrinivas.github.io/schedule-edit-check/), [89 s demo video](https://sivaratrisrinivas.github.io/schedule-edit-check/demo.mp4)):
 
 | Bug type | Planted | Caught | False alarms | Recall |
 |---|---|---|---|---|
